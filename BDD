@@ -1,1 +1,37 @@
+## 05 juin 2020 - 12 h 00
 
+#import os
+#os.chdir("CHANGER LE CHEMIN SI BESOIN")
+
+import sqlite3
+import re
+import json
+from zipfile import ZipFile
+
+def get_info(country, continent):
+
+    with ZipFile('{}.zip'.format(continent), 'r') as z:
+
+        # liste des documents contenus dans le fichier zip
+
+        # print(z.namelist())
+        print()
+
+        # infobox de l'un des pays
+        info = json.loads(z.read('{}.json'.format(country)))
+        print(info)
+
+# TESTS D'ACCESSIONS AUX FICHIERS DE DONNEES BRUTES
+
+for continent in ['oceania', 'south_america']:
+
+    with ZipFile('{}.zip'.format(continent), 'r') as z:
+
+        for pays in z.namelist():
+            pays = pays.replace('.json','')
+            print("\n =============== {} ================".format(pays))
+            wp = get_info(pays,continent)
+
+            # Traitement ultérieur à faire pour chaque pays à ajouter à la base de données
+
+            print(wp)
