@@ -4,6 +4,7 @@ Bienvenue chez nous
 Voici l'équipe :
 Max Lacaze (Rakhenn)
 Raphaël Charlet (RaphaelChrlt)
+Marin Siron (Marin-Siron)
 
 
 Les règles de base d'un Git :
