@@ -5,6 +5,7 @@ Voici l'équipe :
 Max Lacaze (Rakhenn)
 Raphaël Charlet (RaphaelChrlt)
 Marin Siron (Marin-Siron)
+Risa Kambe (risakambe) 
 
 
 Les règles de base d'un Git :
