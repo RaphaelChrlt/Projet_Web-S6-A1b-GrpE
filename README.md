@@ -16,4 +16,7 @@ Les règles de base d'un Git :
 -Dans l'idéal, si quelqu'un travaille en dehors de heures d'autonomie prévue, 
 	Il le dit sur la conv messenger quand il commence, quand il finit et sur quel fichier il travaille.
 	
-Merci	
+Merci
+
+Lien pour l'organisation du travail :
+https://docs.google.com/spreadsheets/d/1meoBUOy7pVTMVZRcSCCIZCETLRO51Ddf3z04lT3O3-c/edit?usp=sharing	
