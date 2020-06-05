@@ -21,3 +21,6 @@ Merci
 
 Lien pour l'organisation du travail :
 https://docs.google.com/spreadsheets/d/1meoBUOy7pVTMVZRcSCCIZCETLRO51Ddf3z04lT3O3-c/edit?usp=sharing	
+
+Lien du discord :
+https://discord.gg/2uqYXK
