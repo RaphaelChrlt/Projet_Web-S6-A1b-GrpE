@@ -6,6 +6,7 @@ Max Lacaze (Rakhenn)
 Raphaël Charlet (RaphaelChrlt)
 Marin Siron (Marin-Siron)
 Risa Kambe (risakambe) 
+Pavlo Bozhok (pbozhok)
 
 
 Les règles de base d'un Git :
