@@ -1,6 +1,6 @@
 ﻿/* fond de page */
 body {
-  background-image: linear-gradient(0deg, slateblue, black, black);
+  background-image: linear-gradient(0deg, lightblue, lightyellow, grey);
   background-size: 100%;
   background-repeat: no-repeat;
   color: white;
@@ -19,11 +19,11 @@ h1 {
   background-color: rgba(255,255,255,0.3);
   border-top: 3px solid rgba(255,255,255,0.6);
   border-bottom: 3px solid rgba(255,255,255,0.6);
-  margin-top: 1em;
+  margin-top: 0.5em;
   text-shadow: 3px 3px 3px black;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 /* contenu de la page */
