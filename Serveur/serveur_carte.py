@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jun 11 10:59:27 2020
+Created on Thu Jun 11 11:53:46 2020
+
+@author: letog
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jun 11 11:49:04 2020
 
 @author: letog
 """
@@ -17,7 +24,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
   static_dir = '/client'
 
   # version du serveur
-  server_version = 'serveur_carte.py/0.1'
+  server_version = 'TD3_mieux-insolites.py/0.1'
 
   # on surcharge la méthode qui traite les requêtes GET
   def do_GET(self):
@@ -134,4 +141,3 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 # instanciation et lancement du serveur
 httpd = socketserver.TCPServer(("", 8080), RequestHandler)
 httpd.serve_forever()
-
