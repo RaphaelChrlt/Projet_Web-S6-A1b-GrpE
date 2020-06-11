@@ -19,11 +19,11 @@ h1 {
   background-color: rgba(255,255,255,0.3);
   border-top: 3px solid rgba(255,255,255,0.6);
   border-bottom: 3px solid rgba(255,255,255,0.6);
-  margin-top: 1.33em;
+  margin-top: 1em;
   text-shadow: 3px 3px 3px black;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  margin-bottom: 1.33em;
+  margin-bottom: 1em;
 }
 
 /* contenu de la page */
@@ -39,4 +39,4 @@ label span { display: inline-block; width: 5em; height: 1.5em; }
 a.delete:hover {
   color: red;
 }
-#map { height: 400px; width: 600px; }
+#map { height: 500px; width: 1000px; }
