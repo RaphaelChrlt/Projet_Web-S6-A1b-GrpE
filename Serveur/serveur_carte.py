@@ -37,7 +37,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 
     # requete description - retourne la description du lieu dont on passe l'id en paramètre dans l'URL
     elif self.path_info[0] == "description":
-      data=[{'id':1,'desc':"Ceci est un test pour voir où s'affiche la description, et c'est un texte long pour vrifier la mise en page : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}]
+      data=[{'id':1,'desc':"Ceci est un test pour voir où s'affiche la description, et c'est un texte long pour vrifier la mise en page "}]
       for c in data:
         if c['id'] == int(self.path_info[1]):
           self.send_json(c)

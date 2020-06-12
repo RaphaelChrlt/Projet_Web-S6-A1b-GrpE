@@ -33,6 +33,17 @@ body > * {   padding-left: 10px; }
 body { font-family: Trebuchet MS, sans-serif; }
 
 /* positionnement des champs */
+div#colonne {  
+  float: right;
+  width : 450px;  
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-right : 1em;}
+
+#description{
+  color : black;
+  }
+
 label { display: block; }
 label span { display: inline-block; width: 5em; height: 1.5em; }
 
