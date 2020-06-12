@@ -16,6 +16,7 @@ import http.server
 import socketserver
 from urllib.parse import urlparse, parse_qs, unquote
 import json
+import import_database as dt
 
 # définition du handler
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -29,6 +30,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
   # on surcharge la méthode qui traite les requêtes GET
   def do_GET(self):
     self.init_params()
+    
+    data_max=dt.importation()
 
     # requete location - retourne la liste de lieux et leurs coordonnées géographiques
     if self.path_info[0] == "location":
