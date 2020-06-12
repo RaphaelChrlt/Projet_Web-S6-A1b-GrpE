@@ -32,12 +32,12 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 
     # requete location - retourne la liste de lieux et leurs coordonnées géographiques
     if self.path_info[0] == "location":
-      data=[]
+      data=[{'id':1,'lat':0,'lon':0,'name':"Le pays test"}]
       self.send_json(data)
 
     # requete description - retourne la description du lieu dont on passe l'id en paramètre dans l'URL
     elif self.path_info[0] == "description":
-      data=[]
+      data=[{'id':1,'desc':"Ceci est un test pour voir où s'affiche la description, et c'est un texte long pour vrifier la mise en page : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}]
       for c in data:
         if c['id'] == int(self.path_info[1]):
           self.send_json(c)

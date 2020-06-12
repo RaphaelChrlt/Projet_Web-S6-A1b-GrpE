@@ -8,7 +8,7 @@
 
 <meta charset="utf-8">
   
-<!-- Récupération de la liste des lieux insolites au chargement de la page -->
+<!-- Récupération de la liste des pays au chargement de la page -->
 <body onload="load_data();">
 
   <h1>Capitales d'Amérique du Sud et d'Océanie</h1>
@@ -41,26 +41,26 @@ function load_data () {
   // objet pour l'envoi d'une requête Ajax
   var xhr = new XMLHttpRequest();
 
-  // fonction appelée lorsque la réponse à la requête (liste des lieux insolites) sera arrivée
+  // fonction appelée lorsque la réponse à la requête (liste des pays) sera arrivée
   xhr.onload = function() {
 
     // transformation des données renvoyées par le serveur
     // responseText est du type string, data est une liste
     var data = JSON.parse(this.responseText);
 
-    // boucle sur les lieux
+    // boucle sur les pays
     for ( n = 0; n < data.length; n++ ) {
       // insertion d'un marqueur à la position du lieu,
       // attachement d'une popup, capture de l'événement 'clic'
       // ajout d'une propriété personnalisée au marqueur
       L.marker([data[n].lat,data[n].lon]).addTo(map)
-       .bindPopup('Lieu = '+data[n].name)
+       .bindPopup('pays = '+data[n].name)
        .addEventListener('click',OnMarkerClick)
        .idnum = data[n].id;
     }
   };
 
-  // Envoi de la requête Ajax pour la récupération de la liste des lieux insolites
+  // Envoi de la requête Ajax pour la récupération de la liste des pays
   xhr.open('GET','/location',true);
   xhr.send();
 }
@@ -71,7 +71,7 @@ function OnMarkerClick (e) {
   // objet pour l'envoi d'une requête Ajax
   var xhr = new XMLHttpRequest();
 
-  // fonction appelée lorsque la réponse à la requête (description d'un lieu insolite) sera arrivée
+  // fonction appelée lorsque la réponse à la requête (description d'un pays) sera arrivée
   xhr.onload = function() {
 
     // transformation des données renvoyées par le serveur
@@ -83,10 +83,10 @@ function OnMarkerClick (e) {
     description.innerHTML =  '<b><i>' + e.target.getPopup().getContent() + '</i></b><br>'+ data.desc;
   };
 
-  // Le numéro du lieu est récupéré via la propriété personnalisée du marqueur
+  // Le numéro du pays est récupéré via la propriété personnalisée du marqueur
   var idnum = e.target.idnum
 
-  // Envoi de la requête Ajax pour la récupération de la description du lieu de numéro idnum
+  // Envoi de la requête Ajax pour la récupération de la description du pays de numéro idnum
   xhr.open('GET','/description/'+idnum,true);
   xhr.send();
 }
