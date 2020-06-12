@@ -32,7 +32,6 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):
     self.init_params()
     data_import=dt.importation()
-    print(data_import)
     
     # requete location - retourne la liste de lieux et leurs coordonnées géographiques
     if self.path_info[0] == "location":
@@ -41,7 +40,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 
     # requete description - retourne la description du lieu dont on passe l'id en paramètre dans l'URL
     elif self.path_info[0] == "description":
-      data=[data_import]
+      data= data_import
       for c in data:
         if c['id'] == int(self.path_info[1]):
           self.send_json(c)

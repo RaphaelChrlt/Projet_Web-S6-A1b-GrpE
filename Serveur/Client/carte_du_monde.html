@@ -86,9 +86,9 @@ function OnMarkerClick (e) {
     // affichage dans la zone 'description' du nom (reprise dans le popup)
     // et de la description récupérée par l'appel au serveur
     important.innerHTML = '<b><i>' + e.target.getPopup().getContent() + '</i></b><br>';
-    lat.innerHTML = 'Latitude : ' + data.lat;
-    lon.innerHTML = 'Longitude : ' + data.lon;
-    description.innerHTML = data.nom_commun;
+    lat.innerHTML = 'Latitude : ' + data.latitude;
+    lon.innerHTML = 'Longitude : ' + data.longitude;
+    description.innerHTML = data.nom_commum;
 
   };
 
