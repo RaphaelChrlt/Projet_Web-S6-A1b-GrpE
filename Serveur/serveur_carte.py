@@ -18,6 +18,7 @@ from urllib.parse import urlparse, parse_qs, unquote
 import json
 import import_database as dt
 
+
 # définition du handler
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
 
@@ -30,17 +31,17 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
   # on surcharge la méthode qui traite les requêtes GET
   def do_GET(self):
     self.init_params()
+    data_import=dt.importation()
+    print(data_import)
     
-    data_max=dt.importation()
-
     # requete location - retourne la liste de lieux et leurs coordonnées géographiques
     if self.path_info[0] == "location":
-      data=[{'id':1,'lat':0,'lon':0,'name':"Le pays test"},{'id':2,'lat':10,'lon':10,'name':"Le pays test deuuuuux le retour"}]
+      data = data_import
       self.send_json(data)
 
     # requete description - retourne la description du lieu dont on passe l'id en paramètre dans l'URL
     elif self.path_info[0] == "description":
-      data=[{'id':1,'lat':0,'lon':0,'desc':"Ceci est un test pour voir où saffiche la description, et cest un texte long pour vérifier la mise en page: Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, , comes from a line in section 1.10.32. "},{'id':2,'lat':10,'lon':10,'desc':"blalal blakfsdk,f pfqd,fv^k ,sf,vkf,d sdlfkv,dfkv,"}]
+      data=[data_import]
       for c in data:
         if c['id'] == int(self.path_info[1]):
           self.send_json(c)

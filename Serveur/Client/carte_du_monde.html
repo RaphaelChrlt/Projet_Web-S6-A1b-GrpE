@@ -32,7 +32,7 @@
 
 // Création d'une carte dans la balise div "map",
 // et position de la vue sur un point donné et un niveau de zoom
-var map = L.map('map').setView([-25,25], 2);
+var map = L.map('map').setView([-25,25], 1);
 
 // Ajout d'une couche de dalles OpenStreetMap
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -57,8 +57,8 @@ function load_data () {
       // insertion d'un marqueur à la position du lieu,
       // attachement d'une popup, capture de l'événement 'clic'
       // ajout d'une propriété personnalisée au marqueur
-      L.marker([data[n].lat,data[n].lon]).addTo(map)
-       .bindPopup(data[n].name)
+      L.marker([data[n].latitude,data[n].longitude]).addTo(map)
+       .bindPopup(data[n].capitale)
        .addEventListener('click',OnMarkerClick)
        .idnum = data[n].id;
     }
@@ -86,9 +86,9 @@ function OnMarkerClick (e) {
     // affichage dans la zone 'description' du nom (reprise dans le popup)
     // et de la description récupérée par l'appel au serveur
     important.innerHTML = '<b><i>' + e.target.getPopup().getContent() + '</i></b><br>';
-    description.innerHTML =   data.desc;
     lat.innerHTML = 'Latitude : ' + data.lat;
     lon.innerHTML = 'Longitude : ' + data.lon;
+    description.innerHTML = data.nom_commun;
 
   };
 

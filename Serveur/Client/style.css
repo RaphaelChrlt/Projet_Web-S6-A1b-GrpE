@@ -30,8 +30,11 @@ h1 {
 body > * {   padding-left: 10px; }
 
 /* polices de caractères */
-body { font-family: Trebuchet MS, sans-serif;  background-image: url(parchemin.jpg);  }
-
+body { 
+  font-family: Trebuchet MS, sans-serif;  
+  background-image: url(parchemin.jpg); 
+}
+/*http://www.fonts2u.com/caribbean-regular.font*/
 
 /* Mise en page de la description*/
 h2 {
