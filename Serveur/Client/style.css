@@ -30,9 +30,22 @@ h1 {
 body > * {   padding-left: 10px; }
 
 /* polices de caractères */
-body { font-family: Trebuchet MS, sans-serif; }
+body { font-family: Trebuchet MS, sans-serif;  background-image: url(parchemin.jpg);  }
+
 
 /* Mise en page de la description*/
+h2 {
+color : black;
+}
+
+#lat{
+  color : black;
+  }
+
+#lon{
+  color : black;
+  }
+
 #description{
   text-align : justify;
   color : black;
