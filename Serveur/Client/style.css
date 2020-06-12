@@ -41,6 +41,7 @@ div#colonne {
   margin-right : 1em;}
 
 #description{
+  text-align : justify;
   color : black;
   }
 

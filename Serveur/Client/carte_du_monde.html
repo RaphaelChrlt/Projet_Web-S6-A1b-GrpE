@@ -55,7 +55,7 @@ function load_data () {
       // attachement d'une popup, capture de l'événement 'clic'
       // ajout d'une propriété personnalisée au marqueur
       L.marker([data[n].lat,data[n].lon]).addTo(map)
-       .bindPopup('pays = '+data[n].name)
+       .bindPopup(data[n].name)
        .addEventListener('click',OnMarkerClick)
        .idnum = data[n].id;
     }
