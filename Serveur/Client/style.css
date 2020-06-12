@@ -37,31 +37,19 @@ body {
 /*http://www.fonts2u.com/caribbean-regular.font*/
 
 /* Mise en page de la description*/
-h2 {
-color : black;
-}
 
-#lat{
-  color : black;
-  }
 
-#lon{
-  color : black;
-  }
-
-#description{
-  text-align : justify;
-  color : black;
-  }
 
 
 /* positionnement des champs */
 div#colonne {  
+  color : black;
   float: right;
   width : 450px;  
   padding-left: 1em;
   padding-right: 1em;
   margin-right : 1em;}
+
 
 
 label { display: block; }

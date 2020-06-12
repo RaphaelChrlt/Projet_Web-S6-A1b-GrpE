@@ -14,10 +14,16 @@
   <h1>Capitales d'Amérique du Sud et d'Océanie</h1>
   <div id = "colonne">
   <!-- Zone pour l'affichage dynamique des descriptions -->
-  <h2  id = "important"></h2>
+
+  <h2  id = "important"><b>Bienvenue sur la carte interactive des capitales d'Amérique du Sud et d'Océanie! </b><br/> Cliquez sur une capitales pour obtenir plus d'informations sur son pays</h2>
+  <p id = "continent"></p>
+  <p id = "convention"></p>
+  <p id="capitale"></p>
   <p id = "lat"> </p>
   <p id = "lon"> </p>
-  <p id="description"></p>
+  <p id = "adwiki"></p>
+  
+
  </div>
 
 
@@ -85,10 +91,14 @@ function OnMarkerClick (e) {
  
     // affichage dans la zone 'description' du nom (reprise dans le popup)
     // et de la description récupérée par l'appel au serveur
-    important.innerHTML = '<b><i>' + e.target.getPopup().getContent() + '</i></b><br>';
+    important.innerHTML = '<b><i>' + data.nom_commum + '</i></b><br>';
+    capitale.innerHTML = 'Capitale : ' + data.capitale;
     lat.innerHTML = 'Latitude : ' + data.latitude;
     lon.innerHTML = 'Longitude : ' + data.longitude;
-    description.innerHTML = data.nom_commum;
+    convention.innerHTML = 'Nom conventionnel du pays : ' + data.nom_conventionnel;
+    continent.innerHTML = 'Continent : ' + data.continent;
+    adwiki.innerHTML = 'Adresse Wikipédia : ' + data.adresse_wiki;
+    
 
   };
 
