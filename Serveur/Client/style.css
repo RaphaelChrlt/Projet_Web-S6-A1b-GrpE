@@ -32,6 +32,13 @@ body > * {   padding-left: 10px; }
 /* polices de caractères */
 body { font-family: Trebuchet MS, sans-serif; }
 
+/* Mise en page de la description*/
+#description{
+  text-align : justify;
+  color : black;
+  }
+
+
 /* positionnement des champs */
 div#colonne {  
   float: right;
@@ -40,10 +47,6 @@ div#colonne {
   padding-right: 1em;
   margin-right : 1em;}
 
-#description{
-  text-align : justify;
-  color : black;
-  }
 
 label { display: block; }
 label span { display: inline-block; width: 5em; height: 1.5em; }
