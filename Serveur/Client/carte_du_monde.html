@@ -119,11 +119,9 @@ function OnMarkerClick (e) {
     // et de la description récupérée par l'appel au serveur
     important.innerHTML = '<b><i>' + data.nom_commum + '</i></b><br>';
 
-    capitale.innerHTML = 'Capitale : ' + data.capitale+'<br/>Latitude : ' + data.latitude +'<br/>Longitude : ' + data.longitude;
+    capitale.innerHTML = 'Capitale : ' + data.capitale+'<br/>Latitude : ' + data.latitude +'<br/>Longitude : ' + data.longitude+'<br/>Adresse Wikipédia de la capitale : <br/>' + data.adresse_wiki;
 
     convention.innerHTML = 'Nom conventionnel du pays : ' + data.nom_conventionnel +'<br/>Continent : ' + data.continent;
-
-    adwiki.innerHTML = 'Adresse Wikipédia : ' + data.adresse_wiki;
 
     pop.innerHTML = 'Population en '+ data.habitants_annee_N + ' : '+data.habitants;
 
