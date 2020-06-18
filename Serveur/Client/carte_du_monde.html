@@ -16,11 +16,12 @@
   <!-- Zone pour l'affichage dynamique des descriptions -->
 
   <h2  id = "important"><b>Bienvenue sur la carte interactive des capitales d'Amérique du Sud et d'Océanie! </b><br/> Cliquez sur une capitale pour obtenir plus d'informations sur son pays</h2>
-  <p id = "continent"></p>
   <p id = "convention"></p>
   <p id="capitale"></p>
-  <p id = "lat"> </p>
-  <p id = "lon"> </p>
+  <p id = "pop"></p>
+  <p id = "money"></p>
+  <p id = "politique"></p>
+  <p id = "divers"></p>
   <p id = "adwiki"></p>
   
 
@@ -92,13 +93,21 @@ function OnMarkerClick (e) {
     // affichage dans la zone 'description' du nom (reprise dans le popup)
     // et de la description récupérée par l'appel au serveur
     important.innerHTML = '<b><i>' + data.nom_commum + '</i></b><br>';
-    capitale.innerHTML = 'Capitale : ' + data.capitale;
-    lat.innerHTML = 'Latitude : ' + data.latitude;
-    lon.innerHTML = 'Longitude : ' + data.longitude;
-    convention.innerHTML = 'Nom conventionnel du pays : ' + data.nom_conventionnel;
-    continent.innerHTML = 'Continent : ' + data.continent;
+
+    capitale.innerHTML = 'Capitale : ' + data.capitale+'<br/>Latitude : ' + data.latitude +'<br/>Longitude : ' + data.longitude;
+
+    convention.innerHTML = 'Nom conventionnel du pays : ' + data.nom_conventionnel +'<br/>Continent : ' + data.continent;
+
     adwiki.innerHTML = 'Adresse Wikipédia : ' + data.adresse_wiki;
-    
+
+    pop.innerHTML = 'Population en '+ data.habitants_annee_N + ' : '+data.habitants;
+
+    money.innerHTML = 'Devise : '+data.devise+ '<br/> PIB nominal : ' + data.PIB_nominal_courant + '<br/> PIB par tête : ' + data.PIB_par_tete;
+
+    politique.innerHTML = 'Régime : '+data.regime + "<br/>Titre du chef d'état : " + data.type_chef_etat + "<br/>Nom du chef d'état : " + data.nom_chef_etat;
+
+    divers.innerHTML = 'Sens de circulation : '+data.Sens_circulation_voitures + "<br/>Préfixe téléphonique international : "+ data.code_appel + "<br/> Domaine internet : " + data.domaine_internet;
+
 
   };
 

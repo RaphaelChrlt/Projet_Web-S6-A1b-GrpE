@@ -36,6 +36,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     # requete location - retourne la liste de lieux et leurs coordonnées géographiques
     if self.path_info[0] == "location":
       data = data_import
+      print(data)
       self.send_json(data)
 
     # requete description - retourne la description du lieu dont on passe l'id en paramètre dans l'URL
