@@ -13,16 +13,14 @@
 h1#grostitre { 
   font-family:  caribbean, sans-serif;
   color: white;
-  border: none;
   box-shadow: none;
-  background-color: rgba(255,255,255,0.3);
-  border-top: 3px solid rgba(255,255,255,0.6);
-  border-bottom: 3px solid rgba(255,255,255,0.6);
-  margin-top: 0.5em;
-  text-shadow: 3px 3px 3px black;
+  margin-top: 1em;
+  text-shadow: 3px 3px 3px black; 
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.1em;
+  padding-left: 1em;
+  margin-left : 1.7em;
 }
 
 /* contenu de la page */
@@ -44,12 +42,16 @@ body {
 /* positionnement des champs */
 div#colonne { 
   font-family: "Trebuchet MS", sans-serif;
-  color : black;
+  color : white;
   float: right;
   width : 450px;  
   padding-left: 1em;
   padding-right: 1em;
   margin-right : 1em;}
+
+div#map {
+  box-shadow : 0 0 30px 5px lightseagreen;
+}
 
 
 
