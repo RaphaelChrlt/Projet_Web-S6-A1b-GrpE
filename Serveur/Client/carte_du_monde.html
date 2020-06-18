@@ -68,8 +68,16 @@ function load_data () {
       // attachement d'une popup, capture de l'événement 'clic'
       // ajout d'une propriété personnalisée au marqueur
 
+      if (data[n].continent != "oceania"){
+        var color = "images/marker-icon-red.png";
+      }
+      else{
+        var color = "images/marker-icon-blue.png";
+      }
+
+
     var myIcon = L.icon({
-     iconUrl: 'images/marker-icon-red.png',
+     iconUrl: color,
      shadowUrl: 'images/marker-shadow.png',
      });
 
