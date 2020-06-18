@@ -56,15 +56,60 @@ def modifications_manuelles():
     c.execute(requete,('Republic of Palau',))
     table.commit()
     
+    #Ajout des populations
+    c=table.cursor()
+    requete='UPDATE demographie SET habitants=102624,habitants_annee_N=2010 WHERE nom_commun=?'
+    c.execute(requete,('Federated States of Micronesia',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE demographie SET habitants=647581,habitants_annee_N=2017 WHERE nom_commun=?'
+    c.execute(requete,('Solomon Islands',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE demographie SET habitants=11639909,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('Bolivia',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE demographie SET habitants=211715973,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('Brazil',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE demographie SET habitants=49084841,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('Colombia',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE demographie SET habitants=16904867,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('Ecuador',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE demographie SET habitants=31689176,habitants_annee_N=2018 WHERE nom_commun=?'
+    c.execute(requete,('Venezuela',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE demographie SET habitants=7191685,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('Paraguay',))
+    table.commit()
+    
     #Modification noms pour bonne extraction 
-#    c=table.cursor()
-#    requete='UPDATE global SET nom_commun=test WHERE nom_conventionnel=?'
-#    c.execute(requete,('Federated States of Micronesia',))
-#    table.commit()
+    c=table.cursor()
+    requete='UPDATE global SET nom_commun=? WHERE nom_conventionnel=?'
+    c.execute(requete,('Palau','Republic of Palau',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE global SET nom_commun=? WHERE nom_conventionnel=?'
+    c.execute(requete,('Federated States of Micronesia','Federated States of Micronesia',))
+    table.commit()
     
     table.close()
     
-
 modifications_manuelles()
 
 

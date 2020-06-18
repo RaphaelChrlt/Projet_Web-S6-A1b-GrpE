@@ -1,4 +1,25 @@
 Coordonnées capitales :
-Vanuata / port vila : 17° 43' 48'' South 168° 19' 00'' Est
-Bolivia / sucre : 19° 02' 34'' South 65° 15 ' 19'' West
+Vanuatu / port vila : 17° 43' 48'' South 168° 19' 00'' Est -17.7450363,168.315741
+Bolivia / sucre : 19° 02' 34'' South 65° 15 ' 33'' West -19.0427778,-65.25916666666667
 
+Coordonnées capitales à modifier :
+Quito :0° 14′ 18″ sud, 78° 31′ 02″ ouest -0.2383333,-78.51722222222222
+Wellington : 41° 17′ 55″ sud, 174° 46′ 52″ est -41.2986111,174.78111111111113
+Honiara : 9°25′55″S 159°57′20″E -9.4319444,159.95555555555555
+Tarawa : 1° 25′ 00″ N, 173° 02′ 00″ E 1.3617602583883812,173.14547027034357
+Majuro :7° 05′ 23″ N, 171° 22′ 50″ E 7.0897222,171.38055555555556
+Palikir : 6° 55′ 04″ nord, 158° 09′ 30″ est 6.918685081405425,158.16068345373725
+Ngerulmud :7° 30′ 02″ nord, 134° 37′ 27″ est 7.5005556,134.62416666666667
+
+Federated States of Micronesia enlevé le "the "
+Palau enlevé Republic of
+
+habitants à ajouter :
+micronésie 102 624	2010
+iles salomon 647 581	2017
+bolivia	11 639 909	2020
+brazil	211 715 973	2020
+colombie 49 084 841	2020
+ecuador 16 904 867	2020
+venezuela 31 689 176	2018
+Paraguay 7 191 685	2020

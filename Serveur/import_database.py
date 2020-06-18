@@ -46,8 +46,6 @@ def importation ():
         for i in range(len(politique_keys)):
             datalist[-1][politique_keys[i]]=politique_donnees[i]
         
-        table.close()
-        
     return datalist
 
 def read_pays_demographie(conn,pays):
