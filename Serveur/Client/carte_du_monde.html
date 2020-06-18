@@ -67,9 +67,17 @@ function load_data () {
       // insertion d'un marqueur à la position du lieu,
       // attachement d'une popup, capture de l'événement 'clic'
       // ajout d'une propriété personnalisée au marqueur
+
+    var myIcon = L.icon({
+     iconUrl: 'images/marker-icon-red.png',
+     shadowUrl: 'images/marker-shadow.png',
+     });
+
+
       L.marker([data[n].latitude,data[n].longitude]).addTo(map)
        .bindPopup(data[n].capitale)
        .addEventListener('click',OnMarkerClick)
+       .setIcon(myIcon)
        .idnum = data[n].id;
     }
   };
