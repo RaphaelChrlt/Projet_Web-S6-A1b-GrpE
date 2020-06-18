@@ -13,7 +13,7 @@ import os
 
 # os.chdir("C:\\Users\\Marin\\Desktop\\Travail\\Centrale\\S6\\Informatique\\Projet d'application Web\\Projet\\INF tc3 - Projet (sujet)\\client")
 
-# os.chdir("C:\\Users\\Marin\\Desktop\\Travail\\Centrale\\S6\\Informatique\\Projet d'application Web\\Projet\\Projet_Web-S6-A1b-GrpE\\Serveur")
+os.chdir("C:\\Users\\Marin\\Desktop\\Travail\\Centrale\\S6\\Informatique\\Projet d'application Web\\Projet\\Projet_Web-S6-A1b-GrpE\\Serveur")
 
 import sqlite3
 import re
@@ -655,7 +655,7 @@ def save_demographie(conn, pays, wp):
     habitants_annee = get_habitants_annee(pays, wp)
 
     # Soumission de la commande (noter que le second argument est un tuple)
-    c.execute(sql, (habitants, habitants_annee, pays))
+    c.execute(sql, (habitants, habitants_annee, pays.replace('_',' ')))
 
 #======================================
 def save_economie(conn, pays, wp):
@@ -671,7 +671,7 @@ def save_economie(conn, pays, wp):
     pib_par_tete = get_pib_par_tete(pays, wp)
 
     # Soumission de la commande (noter que le second argument est un tuple)
-    c.execute(sql, (devise, pib_nominal, pib_par_tete, pays))
+    c.execute(sql, (devise, pib_nominal, pib_par_tete, pays.replace('_',' ')))
 
 #======================================
 def save_miscellaneous(conn, pays, wp):
@@ -687,7 +687,7 @@ def save_miscellaneous(conn, pays, wp):
     domaine_internet = get_domaine_internet(pays, wp)
 
     # Soumission de la commande (noter que le second argument est un tuple)
-    c.execute(sql, (sens_circulation, code_appel, domaine_internet, pays))
+    c.execute(sql, (sens_circulation, code_appel, domaine_internet, pays.replace('_',' ')))
 
 #======================================
 def save_politique(conn, pays, wp):
@@ -703,7 +703,7 @@ def save_politique(conn, pays, wp):
     nom_chef = get_nom_chef_etat(pays, wp)
 
     # Soumission de la commande (noter que le second argument est un tuple)
-    c.execute(sql, (regime, type_chef, nom_chef, pays))
+    c.execute(sql, (regime, type_chef, nom_chef, pays.replace('_',' ')))
 
 #======================================
 def save_all_info(conn):
