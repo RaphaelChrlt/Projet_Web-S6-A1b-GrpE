@@ -108,6 +108,18 @@ def modifications_manuelles():
     c.execute(requete,('Federated States of Micronesia','Federated States of Micronesia',))
     table.commit()
     
+    #Ajout drapeau manquant
+    
+    c=table.cursor()
+    requete='UPDATE global SET drapeau=? WHERE nom_commun=?'
+    c.execute(requete,('flags/palau-160x100.png','Palau',))
+    table.commit()
+    
+    c=table.cursor()
+    requete='UPDATE global SET drapeau=? WHERE nom_commun=?'
+    c.execute(requete,('flags/federated_states_of_micronesia-190x100.png','Federated States of Micronesia',))
+    table.commit()
+    
     table.close()
     
 modifications_manuelles()
