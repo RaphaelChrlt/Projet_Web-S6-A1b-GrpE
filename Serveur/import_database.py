@@ -20,26 +20,20 @@ def importation ():
     requete='SELECT nom_commun FROM global'
     c.execute(requete)
     r=c.fetchall()
-    print(r)
     
     identification=1
     for country in r:
-        print(country)
+        
         #Récupération des données dans chaque table
         demographie_donnees=read_pays_demographie(table,country)
         economie_donnees=read_pays_economie(table,country)
         global_donnees=read_pays_global(table,country)
         miscellaneous_donnees=read_pays_miscellaneous(table,country)
         politique_donnees=read_pays_politique(table,country)
-        
-        
-        print(demographie_donnees)
-#        donnees=read_pays(table,country)
-        
+                
         #Initialisation du dico
         datalist.append({'id':identification})
         identification+=1
-#        print(donnees)
         
         for i in range(len(global_keys)):
             datalist[-1][global_keys[i]]=global_donnees[i]
@@ -51,10 +45,7 @@ def importation ():
             datalist[-1][miscellaneous_keys[i]]=miscellaneous_donnees[i]
         for i in range(len(politique_keys)):
             datalist[-1][politique_keys[i]]=politique_donnees[i]
-        
-#        for i in range(len(keys)):
-#            datalist[-1][keys[i]]=donnees[i]
-    
+            
     return datalist
 
 def read_pays_demographie(conn,pays):
