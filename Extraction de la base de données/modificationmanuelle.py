@@ -58,43 +58,43 @@ def modifications_manuelles():
     
     #Ajout des populations
     c=table.cursor()
-    requete='UPDATE demographie SET habitants=102624,habitants_annee_N=2010 WHERE nom_commun=?'
-    c.execute(requete,('Federated States of Micronesia',))
+    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2010 WHERE nom_commun=?'
+    c.execute(requete,('102,624','Federated States of Micronesia',))
     table.commit()
     
     c=table.cursor()
-    requete='UPDATE demographie SET habitants=647581,habitants_annee_N=2017 WHERE nom_commun=?'
-    c.execute(requete,('Solomon Islands',))
+    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2017 WHERE nom_commun=?'
+    c.execute(requete,('647,581','Solomon Islands',))
     table.commit()
     
     c=table.cursor()
-    requete='UPDATE demographie SET habitants=11639909,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('Bolivia',))
+    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('11,639,909','Bolivia',))
     table.commit()
     
     c=table.cursor()
-    requete='UPDATE demographie SET habitants=211715973,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('Brazil',))
+    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('211,715,973','Brazil',))
     table.commit()
     
     c=table.cursor()
-    requete='UPDATE demographie SET habitants=49084841,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('Colombia',))
+    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('49,084,841','Colombia',))
     table.commit()
     
     c=table.cursor()
-    requete='UPDATE demographie SET habitants=16904867,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('Ecuador',))
+    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('16,904,867','Ecuador',))
     table.commit()
     
     c=table.cursor()
-    requete='UPDATE demographie SET habitants=31689176,habitants_annee_N=2018 WHERE nom_commun=?'
-    c.execute(requete,('Venezuela',))
+    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2018 WHERE nom_commun=?'
+    c.execute(requete,('31,689,176','Venezuela',))
     table.commit()
     
     c=table.cursor()
-    requete='UPDATE demographie SET habitants=7191685,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('Paraguay',))
+    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
+    c.execute(requete,('7,191,685','Paraguay',))
     table.commit()
     
     #Modification noms pour bonne extraction 
