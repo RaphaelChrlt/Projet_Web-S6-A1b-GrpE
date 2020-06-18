@@ -38,16 +38,27 @@ body {
 
 
 
-
 /* positionnement des champs */
 div#colonne { 
+  font-size: 110%;
   font-family: "Trebuchet MS", sans-serif;
   color : white;
   float: right;
   width : 450px;  
   padding-left: 1em;
   padding-right: 1em;
-  margin-right : 1em;}
+  text-shadow: 2px 2px 2px black;
+  position: relative;
+  top : -1em;
+}
+
+  div#colonne2{
+  float : right;
+  margin-right : 2em;
+  position: relative;
+  top: 1em;
+}
+
 
 div#map {
   box-shadow : 0 0 30px 5px lightseagreen;
