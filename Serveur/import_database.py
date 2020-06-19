@@ -11,7 +11,7 @@ def importation ():
     #Ensemble des clefs de la base de données
     demographie_keys=['habitants','habitants_annee_N']
     economie_keys=['devise','PIB_nominal_courant','PIB_par_tete']
-    global_keys=['nom_conventionnel','nom_commum','capitale','continent','drapeau','latitude','longitude','adresse_wiki']
+    global_keys=['nom_conventionnel','nom_commun','capitale','continent','drapeau','latitude','longitude','adresse_wiki']
     miscellaneous_keys=['Sens_circulation_voitures','code_appel','domaine_internet']
     politique_keys=['regime','type_chef_etat','nom_chef_etat']
     

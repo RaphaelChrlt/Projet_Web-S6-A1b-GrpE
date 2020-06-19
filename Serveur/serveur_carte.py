@@ -50,7 +50,12 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     elif self.path_info[0] == "service":
       self.send_html('<p>Path info : <code>{}</p><p>Chaîne de requête : <code>{}</code></p>' \
           .format('/'.join(self.path_info),self.query_string));
-
+    
+    #requête du formulaire de distance
+    elif self.path_info[0] == "distance":
+        distance=self.calcul_distance(data_import,self.path_info[1],self.path_info[2])
+        print(distance)
+    
     else:
       self.send_static()
 
@@ -140,6 +145,27 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     print('body =',length,ctype,self.body)
     print('params =', self.params)
 
+  def calcul_distance(self,data,psa,psb):
+      lata=0
+      latb=0
+      lona=0
+      lonb=0
+      import numpy as np
+      for d in data:
+#          print(d,psa,psb)
+#          print(type(d))
+#          print(d['id'])
+#          print(d.keys())
+          if d['nom_commun']==psa or d['nom_conventionnel']==psa or d['capitale']==psa:
+              lata=d['latitude']*np.pi/180
+              lona=d['longitude']*np.pi/180
+          elif d['nom_commun']==psb or d['nom_conventionnel']==psb or d['capitale']==psb:
+              latb=d['latitude']*np.pi/180
+              lonb=d['longitude']*np.pi/180
+      print(lata,latb,lona,lonb)
+      M=60*1.852*180/np.pi*np.arccos(np.sin(lata)*np.sin(latb)+np.cos(lata)*np.cos(latb)*np.cos(lonb-lona))
+      print(np.cos(M/60/1.852))
+      return M   
 
 # instanciation et lancement du serveur
 httpd = socketserver.TCPServer(("", 8080), RequestHandler)

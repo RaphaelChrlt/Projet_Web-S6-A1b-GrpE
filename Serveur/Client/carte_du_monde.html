@@ -37,6 +37,14 @@
 
   <!-- Zone pour l'insertion de la carte OSM via Leaflet -->
   <div id="map" style="margin-bottom:1.33em"></div>  
+  
+  <div id="formulaire">
+  <h3 id="autre"><b>Calculer la distance entre 2 capitales</b></h3>
+  <label>Pays/Capital A:<input id="paysa" name="paysa"</label><br>
+  <label>Pays/Capital B:<input id="paysb" name="paysb"</label><br>
+  <button id="bouton">Calcul</button>
+  <p id="reponsecalcul"></p>
+  </div>
 
 
  </body>
@@ -141,4 +149,26 @@ function OnMarkerClick (e) {
   xhr.open('GET','/description/'+idnum,true);
   xhr.send();
 }
+
+//formulaire pour le calcul de distance
+document.getElementById('bouton').addEventListener('click', envoiformulaire);
+
+function envoiformulaire(e) {
+   var xhr = new XMLHttpRequest();
+
+   // on récupère le nom du pays
+   var psa = document.getElementById('paysa').value;
+	psb = document.getElementById('paysb').value;
+
+   // requÃªte au serveur
+   xhr.open('GET','/distance/'+psa+'/'+psb,true);
+ 
+   xhr.onload = function() {   // fonction callback
+
+    // affichage informations renoyÃ©es dans l'Ã©lÃ©ment #drop_zone
+    document.getElementById('reponsecalcul').innerHTML = this.responseText;
+  };
+  xhr.send();
+}
+
 </script>
