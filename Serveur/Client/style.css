@@ -49,14 +49,16 @@ div#colonne {
   padding-right: 1em;
   text-shadow: 2px 2px 2px black;
   position: relative;
-  top : -1em;
+  top : -1.5em;
 }
+
+
 
   div#colonne2{
   float : right;
-  margin-right : 2em;
+  margin-right : 0.5em;
   position: relative;
-  top: 1em;
+  top: 0.5em;
 }
 
 
@@ -64,7 +66,9 @@ div#map {
   box-shadow : 0 0 30px 5px lightseagreen;
 }
 
-
+hr#barre{
+  color: lightseagreen;
+}
 
 label { display: block; }
 label span { display: inline-block; width: 5em; height: 1.5em; }
