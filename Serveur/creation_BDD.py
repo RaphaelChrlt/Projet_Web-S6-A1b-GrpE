@@ -13,7 +13,7 @@ import os
 
 # os.chdir("C:\\Users\\Marin\\Desktop\\Travail\\Centrale\\S6\\Informatique\\Projet d'application Web\\Projet\\INF tc3 - Projet (sujet)\\client")
 
-os.chdir("C:\\Users\\Marin\\Desktop\\Travail\\Centrale\\S6\\Informatique\\Projet d'application Web\\Projet\\Projet_Web-S6-A1b-GrpE\\Serveur")
+"""os.chdir("C:\\Users\\Marin\\Desktop\\Travail\\Centrale\\S6\\Informatique\\Projet d'application Web\\Projet\\Projet_Web-S6-A1b-GrpE\\Serveur")"""
 
 import sqlite3
 import re
@@ -218,8 +218,11 @@ def cv_coords(str_coords):
     return {'lat':lat, 'lon':lon }
 
 #======================================
-def get_adresse_wiki(wiki):
-    return 'INCONNUE'
+def get_adresse_wiki(pays, wp_info):
+    
+    get_capital = get_capitale(pays, wp_info)
+    adresse_wiki = str('https://en.wikipedia.org/wiki/{}'.format(get_capital).replace(' ','_'))
+    return adresse_wiki
 
 #=================================== ECONOMIE =================================
 
@@ -630,7 +633,7 @@ def save_global(conn, pays, continent, wp):
     capitale = get_capitale(pays, wp)
     coords = get_coords(wp)
     drapeau = get_flag(wp)
-    adresse_wiki = get_adresse_wiki(wp)
+    adresse_wiki = get_adresse_wiki(pays,wp)
 
     # Soumission de la commande (noter que le second argument est un tuple)
     c.execute(sql, (nom_conventionnel, nom_commun, capitale, continent, drapeau, coords['lat'], coords['lon'], adresse_wiki))
