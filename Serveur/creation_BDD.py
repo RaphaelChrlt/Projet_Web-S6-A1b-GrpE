@@ -293,11 +293,11 @@ def get_pib_nominal(pays, wp_info):
     pib = float(m.group(1))
     unit = m.group(2)
     if unit == 'million':
-        pib *= 10e6
+        pib *= 10e-3
     elif unit == 'billion':
-        pib *= 10e9
+        pib *= 1
     elif unit == 'trillion':
-        pib *= 10e12
+        pib *= 10e3
     else:
         assert False, "{}: {} invalide".format(pays, information)
 
