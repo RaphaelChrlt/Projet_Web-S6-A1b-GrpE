@@ -155,14 +155,6 @@ def get_coords(wp_info):
         return cv_coords('6|10|23|S|35|44|31|E')
 
 
-    # A FAIRE
-    # # On n'a pas trouvé de coordonnées dans l'infobox du pays
-    # # on essaie avec la page de la capitale
-    # capitale = get_capitale(wp_info)
-    # if capital:
-    #     print(' Fetching capital coordinates...')
-    #     return get_coords(get_info(capitale))
-
     # Aveu d'échec, on ne doit jamais se retrouver ici
     print(' Could not fetch country coordinates')
     return {'lat' : 'None','lon' : 'None'}
@@ -170,6 +162,7 @@ def get_coords(wp_info):
 #======================================
 def cv_coords(str_coords):
     """ Conversion d'une chaîne de caractères décrivant une position géographique en coordonnées numériques latitude et longitude """
+    
     # on découpe au niveau des "|"
     c = str_coords.split('|')
 
@@ -766,6 +759,9 @@ def delete_all_info(conn):
 
 #=================================== Le programme ==============================
 
+
+# Création de la base de données
+
 #print_all_info()
 conn = sqlite3.connect('pays.sqlite')
 delete_all_info(conn)
@@ -773,100 +769,51 @@ save_all_info(conn)
 conn.commit()
 conn.close()
 
-#Modifications manuelles de la table de données
+# Modifications manuelles de la table de données
+
 def modifications_manuelles():
     import sqlite3
     table=sqlite3.connect('pays.sqlite')
     print(table)
     
     #Ajout et modifications des capitales
-    c=table.cursor()
-    requete='UPDATE global SET latitude=-17.7450363,longitude=168.315741 WHERE nom_commun=?'
-    c.execute(requete,('Vanuatu',))
-    table.commit()
+    
+    #Listes des données manquantes
+    tab_pays = ['Vanuatu','Bolivia', 'Ecuador', 'New Zealand', 'Solomon Islands', 'Kiribati', 'Majuro', 'Federated States of Micronesia', 'Republic of Palau']
+    tab_lat = [-17.7450363,-19.0427778,-0.238333,-41.2986111,-9.4319444,1.3617602583883812,7.0897222,6.918685081405425,7.5005556]
+    tab_long = [168.315741,-65.25916667,-78.5172222,174.78111111,159.95555555555555,173.14547027034357,171.38055555555556,158.16068345373725,134.62416666666667]
     
     c=table.cursor()
-    requete='UPDATE global SET latitude=-19.0427778,longitude=-65.25916667 WHERE nom_commun=?'
-    c.execute(requete,('Bolivia',))
-    table.commit()
     
-    c=table.cursor()
-    requete='UPDATE global SET latitude=-0.238333,longitude=-78.5172222 WHERE nom_commun=?'
-    c.execute(requete,('Ecuador',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE global SET latitude=-41.2986111,longitude=174.78111111 WHERE nom_commun=?'
-    c.execute(requete,('New Zealand',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE global SET latitude=-9.4319444,longitude=159.95555555555555 WHERE nom_commun=?'
-    c.execute(requete,('Solomon Islands',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE global SET latitude=1.3617602583883812,longitude=173.14547027034357 WHERE nom_commun=?'
-    c.execute(requete,('Kiribati',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE global SET latitude=7.0897222,longitude=171.38055555555556 WHERE nom_commun=?'
-    c.execute(requete,('Majuro',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE global SET latitude=6.918685081405425,longitude=158.16068345373725 WHERE nom_conventionnel=?'
-    c.execute(requete,('Federated States of Micronesia',))
-    table.commit()
+    for i in range(len(tab_lat)-2):
+        requete='UPDATE global SET latitude={},longitude={} WHERE nom_commun=?'.format(tab_lat[i],tab_long[i])
+        c.execute(requete,(tab_pays[i],))
+        table.commit()
+
+    for i in range(len(tab_lat)-2,len(tab_lat)):
+        
+        c=table.cursor()
+        requete='UPDATE global SET latitude={},longitude={} WHERE nom_conventionnel=?'.format(tab_lat[i],tab_long[i])
+        c.execute(requete,(tab_pays[i],))
+        table.commit()
 #    
-    c=table.cursor()
-    requete='UPDATE global SET latitude=7.5005556,longitude=134.62416666666667 WHERE nom_conventionnel=?'
-    c.execute(requete,('Republic of Palau',))
-    table.commit()
     
     #Ajout des populations
-    c=table.cursor()
-    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2010 WHERE nom_commun=?'
-    c.execute(requete,('102,624','Federated States of Micronesia',))
-    table.commit()
     
-    c=table.cursor()
-    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2017 WHERE nom_commun=?'
-    c.execute(requete,('647,581','Solomon Islands',))
-    table.commit()
+    tab_pays = ['Federated States of Micronesia','Solomon Islands', 'Bolivia', 'Brazil', 'Colombia', 'Ecuador', 'Venezuela', 'Paraguay']
+    tab_habit = ['102,624', '647,581', '11,639,909', '211,715,973', '49,084,841', '16,904,867', '31,689,176', '7,191,685']
+    tab_annees = [2010, 2017, 2020, 2020, 2020, 2020, 2018, 2020]
     
-    c=table.cursor()
-    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('11,639,909','Bolivia',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('211,715,973','Brazil',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('49,084,841','Colombia',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('16,904,867','Ecuador',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2018 WHERE nom_commun=?'
-    c.execute(requete,('31,689,176','Venezuela',))
-    table.commit()
-    
-    c=table.cursor()
-    requete='UPDATE demographie SET habitants=?,habitants_annee_N=2020 WHERE nom_commun=?'
-    c.execute(requete,('7,191,685','Paraguay',))
-    table.commit()
-    
+
+    for i in range(len(tab_pays)):
+        c=table.cursor()  
+        requete='UPDATE demographie SET habitants=?,habitants_annee_N={} WHERE nom_commun=?'.format(tab_annees[i])
+        c.execute(requete,(tab_habit[i],tab_pays[i],))
+        table.commit()
+
+
     #Modification noms pour bonne extraction 
+    
     c=table.cursor()
     requete='UPDATE global SET nom_commun=? WHERE nom_conventionnel=?'
     c.execute(requete,('Palau','Republic of Palau',))
@@ -877,7 +824,7 @@ def modifications_manuelles():
     c.execute(requete,('Federated States of Micronesia','Federated States of Micronesia',))
     table.commit()
     
-    #Ajout drapeau manquant
+    #Ajout drapeaux manquants
     
     c=table.cursor()
     requete='UPDATE global SET drapeau=? WHERE nom_commun=?'
@@ -890,5 +837,5 @@ def modifications_manuelles():
     table.commit()
     
     table.close()
-    
+
 modifications_manuelles()
