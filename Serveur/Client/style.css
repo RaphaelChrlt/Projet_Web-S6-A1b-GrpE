@@ -9,9 +9,23 @@
   box-sizing: border-box;
 }
 
+/* polices de caractères  et image de fond*/
+/*http://www.fonts2u.com/caribbean-regular.font*/
+@font-face {  
+ font-family: Caribbean;
+  font-style: normal;
+  font-weight: 400;
+  src: url('Caribbean.ttf');
+}
+
+body { 
+  background-image: url(parchemin.jpg); 
+}
+
+
 /* bandeau de titre */
 h1#grostitre { 
-  font-family:  caribbean, sans-serif;
+  font-family: Caribbean, regular;
   color: white;
   box-shadow: none;
   margin-top: 1em;
@@ -26,13 +40,6 @@ h1#grostitre {
 /* contenu de la page */
 body > * {   padding-left: 10px; }
 
-/* polices de caractères  et image de fond*/
-
-
-body {   
-  background-image: url(parchemin.jpg); 
-}
-/*http://www.fonts2u.com/caribbean-regular.font*/
 
 /* Mise en page de la description*/
 

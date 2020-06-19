@@ -15,7 +15,9 @@
     <figure id = "flag"></figure>
   </div>
 
-  <h1 id = "grostitre">Capitales d'Amerique du Sud et d'Oceanie</h1>
+  <h1 id = "grostitre">
+    Capitales d'Amerique du Sud et d'Oceanie
+  </h1>
 
 
 
@@ -131,7 +133,7 @@ function OnMarkerClick (e) {
 
     pop.innerHTML = '<hr id ="barre"/>Population en '+ data.habitants_annee_N + ' : '+data.habitants;
 
-    money.innerHTML = '<hr id ="barre"/>Devise : '+data.devise+ '<br/> PIB nominal (en millard de dollars) : ' + data.PIB_nominal_courant + '<br/> PIB par tête : ' + data.PIB_par_tete;
+    money.innerHTML = '<hr id ="barre"/>Devise : '+data.devise+ '<br/> PIB nominal (millards USD) : ' + data.PIB_nominal_courant + '<br/> PIB par tête (USD): ' + data.PIB_par_tete;
 
     politique.innerHTML = '<hr id ="barre"/>Régime : '+data.regime + "<br/>Titre du chef d'état : " + data.type_chef_etat + "<br/>Nom du chef d'état : " + data.nom_chef_etat;
 
