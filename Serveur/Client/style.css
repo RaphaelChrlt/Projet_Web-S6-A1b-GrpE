@@ -70,6 +70,10 @@ hr#barre{
   color: lightseagreen;
 }
 
+.link{ 
+  color : cyan; 
+}
+
 label { display: block; }
 label span { display: inline-block; width: 5em; height: 1.5em; }
 
