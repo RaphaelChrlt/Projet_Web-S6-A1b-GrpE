@@ -125,9 +125,9 @@ function OnMarkerClick (e) {
  
     // affichage dans la zone 'description' du nom (reprise dans le popup)
     // et de la description récupérée par l'appel au serveur
-    important.innerHTML = '<b><i>' + data.nom_commum + '</i></b><br>';
+    important.innerHTML = '<b><i>' + data.nom_commun + '</i></b><br>';
 
-    capitale.innerHTML = '<hr id ="barre"/>Capitale : ' + data.capitale+'<br/>Latitude : ' + data.latitude +'<br/>Longitude : ' + data.longitude+'<br/><a class ="link" href = "https://l.facebook.com/l.php?u=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNgerulmud%3Ffbclid%3DIwAR10BUDUaUKiJLf4dUJ7hXQOELdlkuoOrfK8anyFV0a7ftLxI_MTJgMoRlQ&h=AT3PY589iwIVyK-K016qwcoQZHt_Oin_lAtRRUB9A-8JHdtpmzSwuGL0y-YRoIbh9FkPLb-sYuZodbjYITgv6I_XGXA3BkF0MdBQsp5rBKLIkwWWv0PaxSnZrZWh7WOmn8IDSw">Page Wikipédia de la capitale</a>' ;
+    capitale.innerHTML = '<hr id ="barre"/>Capitale : ' + data.capitale+'<br/>Latitude : ' + data.latitude +'<br/>Longitude : ' + data.longitude+'<br/><a class ="link" href = "'+data.adresse_wiki+'">Page Wikipédia de la capitale</a>' ;
 
     convention.innerHTML = '<hr id ="barre"/>Nom conventionnel du pays : ' + data.nom_conventionnel +'<br/>Continent : ' + data.continent;
 
