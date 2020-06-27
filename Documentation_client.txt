@@ -1,0 +1,16 @@
+INF tc3	--------------------------Projet Web : Groupe E-----------------------------
+
+Pour lancer le serveur :
+1.	Ouvrir le fichier « serveur_carte.py » sur la console Python et le lancer.
+2.	Entrer l’adresse « localhost :8080 » sur votre navigateur.
+3.	Cliquer sur carte_du_monde.html.
+4.	S’amuser d’explorer les pays dans Amérique du sud et Océanie !!
+
+Les actions qu’one peut faire sur le serveur :
+-	Calculer la distance entre les deux capitales
+-	En cliquant sur « Page Wikipédia de la capitale », vous pouvez aller au site web.
+-	En cliquant sur la capitale qui vous intéresse, (les icônes rouges pour l'Amérique du Sud, les icônes bleues pour l'Océanie), vous pouvez obtenir les informations sur cette capitale.
+Les informations que vous pouvez obtenir : drapeau, nom conventionnel du pays, continent, nom de capitale, latitude, longitude, population, devise, PIB nominal, PIB par tête, régime, titre du chef d’état, nom du chef d’état, sens de circulation, préfixe téléphonique international, domaine internet.
+
+
+Raphaël Charlet, Max Lacaze, Marin Siron, Pavlo Bozhok, Risa Kambe
