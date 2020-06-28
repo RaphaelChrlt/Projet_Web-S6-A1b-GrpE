@@ -93,13 +93,16 @@ div#formulaire{
   box-shadow: 2px 2px 20px 2px rgb(32,178,170,0.3);
   padding-right: 20px;
   text-shadow : 1px 1px 1px black;
+  padding-bottom: 8px;
 }
 
 
 input{
   margin-left: 10px;
+  margin-top : 3px;
   background-color: rgb(42,188,180,0.2);
-  color: white;
+  border-color: rgb(42,188,180,0.8);
+  color : white;
 }
 
 
@@ -120,21 +123,22 @@ a.delete:hover {
 
 div#cadrebouton{
   position: relative;
-  top : -38px;
+  top : -33px;
+  left: 0px;
 }
 
 button#calcul{
-  position: relative;
-  left: 9px;
+  text-shadow : 1px 1px 1px black;
   margin-top: 10px;
-  background-color: rgb(32,178,170,0.6);
+  background-color: transparent;
   color : white;
+  border : none;
 }
 
 
 .shape {
   stroke-dasharray: 400 540;
-  stroke-dashoffset: -170;
+  stroke-dashoffset: -140;
   stroke-width: 8px;
   fill: transparent;
   stroke: lightseagreen;
@@ -145,7 +149,7 @@ button#calcul{
 
 .svg-wrapper {
   width: 70px;
-  height: 30px;
+  height: 15px;
   position : relative;
   top: 10px;
 }
