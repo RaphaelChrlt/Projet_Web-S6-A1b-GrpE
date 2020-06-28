@@ -65,7 +65,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         elif distance==-3:
             self.send('Erreur de frappe Pays/Capital B')
         else :
-            self.send('La distance Capital/Capitale est de {} km'.format(int(distance)))
+            self.send('La distance Capitale/Capitale est de {} km'.format(int(distance)))
     
     else:
       self.send_static()
