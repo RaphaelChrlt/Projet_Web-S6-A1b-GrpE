@@ -189,6 +189,7 @@ def cv_coords(str_coords):
         lat += float(c.pop(0))/3600
         lat = -lat
         c.pop(0)
+    lat = '{:.3f}'.format(lat)
 
     # on fait de même avec la longitude
     lon = float(c.pop(0))
@@ -213,6 +214,7 @@ def cv_coords(str_coords):
         lon += float(c.pop(0))/60
         lon += float(c.pop(0))/3600
         c.pop(0)
+    lon = '{:.3f}'.format(lon)
 
     # on renvoie un dictionnaire avec les deux valeurs
     return {'lat':lat, 'lon':lon }
@@ -783,8 +785,8 @@ def modifications_manuelles():
     
     #Listes des données manquantes
     tab_pays = ['Vanuatu','Bolivia', 'Ecuador', 'New Zealand', 'Solomon Islands', 'Kiribati', 'Majuro', 'Federated States of Micronesia', 'Republic of Palau']
-    tab_lat = [-17.7450363,-19.0427778,-0.238333,-41.2986111,-9.4319444,1.3617602583883812,7.0897222,6.918685081405425,7.5005556]
-    tab_long = [168.315741,-65.25916667,-78.5172222,174.78111111,159.95555555555555,173.14547027034357,171.38055555555556,158.16068345373725,134.62416666666667]
+    tab_lat = [-17.745,-19.043,-0.238,-41.299,-9.432,1.362,7.090,6.919,7.501]
+    tab_long = [168.316,-65.259,-78.517,174.781,159.956,173.145,171.381,158.161,134.624]
     
     c=table.cursor()
     
