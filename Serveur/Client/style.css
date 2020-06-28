@@ -37,6 +37,7 @@ h1#grostitre {
   margin-left : 1.7em;
 }
 
+
 /* contenu de la page */
 body > * {   padding-left: 10px; }
 
@@ -85,7 +86,7 @@ hr#barre{
 div#formulaire{
   z-index: 2;
   position:relative;
-  bottom: 160px;
+  bottom: 196px;
   background-color : rgb(32,178,170,0.4);
   display : inline-block;
   border-radius : 0 30px 0 0 ;
@@ -94,6 +95,8 @@ div#formulaire{
   padding-right: 20px;
   text-shadow : 1px 1px 1px black;
   padding-bottom: 8px;
+  width: 300px;
+  height: 172px;
 }
 
 
@@ -133,6 +136,12 @@ button#calcul{
   background-color: transparent;
   color : white;
   border : none;
+}
+
+p#reponsecalcul{
+  position : relative;
+  top : 15px;
+  padding-bottom : 0px;
 }
 
 
