@@ -53,8 +53,19 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     
     #requête du formulaire de distance
     elif self.path_info[0] == "distance":
+        print(self.path_info[1],self.path_info[2])
         distance=self.calcul_distance(data_import,self.path_info[1],self.path_info[2])
         print(distance)
+        if distance==0:
+            self.send('Vous êtes dans le même pays')
+        elif distance==-1:
+            self.send('Multiples erreurs de frappe')
+        elif distance==-2:
+            self.send('Erreur de frappe Pays/Capital A')
+        elif distance==-3:
+            self.send('Erreur de frappe Pays/Capital B')
+        else :
+            self.send('La distance Capitale/Capitale est de {} km'.format(int(distance)))
     
     else:
       self.send_static()
@@ -150,21 +161,28 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
       latb=0
       lona=0
       lonb=0
+      testa=0
+      testb=0 #tests de bon orthographe
       import numpy as np
       for d in data:
-#          print(d,psa,psb)
-#          print(type(d))
-#          print(d['id'])
-#          print(d.keys())
           if d['nom_commun']==psa or d['nom_conventionnel']==psa or d['capitale']==psa:
               lata=d['latitude']*np.pi/180
               lona=d['longitude']*np.pi/180
-          elif d['nom_commun']==psb or d['nom_conventionnel']==psb or d['capitale']==psb:
+              testa+=1
+          if d['nom_commun']==psb or d['nom_conventionnel']==psb or d['capitale']==psb:
               latb=d['latitude']*np.pi/180
               lonb=d['longitude']*np.pi/180
-      print(lata,latb,lona,lonb)
+              testb+=1
       M=60*1.852*180/np.pi*np.arccos(np.sin(lata)*np.sin(latb)+np.cos(lata)*np.cos(latb)*np.cos(lonb-lona))
-      print(np.cos(M/60/1.852))
+      if testa==0 and testb==0:
+          return -1 #'''S'il y a une erreur de frappe pour les 2 pays/capitales'''
+      elif lata==latb and lona==lonb:
+          return 0 #'''Si on est dans le même pays ex : A=Lima B=Peru'''
+      elif testa==0:
+          return -2 #'''Erreur de frappe uniquement A'''
+      elif testb==0 :
+          return -3 #'''Erreur de frappe uniquement A'''
+      #'''Si tout est bon on return la distance'''
       return M   
 
 # instanciation et lancement du serveur

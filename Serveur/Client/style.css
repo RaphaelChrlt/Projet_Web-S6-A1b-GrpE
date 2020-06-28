@@ -61,7 +61,7 @@ div#colonne {
 
 
 
-  div#colonne2{
+div#colonne2{
   float : right;
   margin-right : 0.5em;
   position: relative;
@@ -70,6 +70,7 @@ div#colonne {
 
 
 div#map {
+  z-index : 1;
   box-shadow : 0 0 30px 5px lightseagreen;
 }
 
@@ -81,6 +82,32 @@ hr#barre{
   color : cyan; 
 }
 
+div#formulaire{
+  z-index: 2;
+  position:relative;
+  bottom: 160px;
+  background-color : rgb(32,178,170,0.4);
+  display : inline-block;
+  border-radius : 0 30px 0 0 ;
+  border-left : 5px lightseagreen;
+  box-shadow: 2px 2px 20px 2px rgb(32,178,170,0.3);
+  padding-right: 20px;
+  text-shadow : 1px 1px 1px black;
+  padding-bottom: 8px;
+}
+
+
+input{
+  margin-left: 10px;
+  margin-top : 3px;
+  background-color: rgb(42,188,180,0.2);
+  border-color: rgb(42,188,180,0.8);
+  color : white;
+}
+
+
+
+
 label { display: block; }
 label span { display: inline-block; width: 5em; height: 1.5em; }
 
@@ -88,3 +115,47 @@ a.delete:hover {
   color: red;
 }
 #map { height: 500px; width: 1000px; }
+
+
+
+
+
+
+div#cadrebouton{
+  position: relative;
+  top : -33px;
+  left: 0px;
+}
+
+button#calcul{
+  text-shadow : 1px 1px 1px black;
+  margin-top: 10px;
+  background-color: transparent;
+  color : white;
+  border : none;
+}
+
+
+.shape {
+  stroke-dasharray: 400 540;
+  stroke-dashoffset: -140;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: lightseagreen;
+  border-bottom: 5px solid black;
+  transition: stroke-width 0.5s, stroke-dashoffset 0.5s,
+  stroke-dasharray 0.5s;
+}
+
+.svg-wrapper {
+  width: 70px;
+  height: 15px;
+  position : relative;
+  top: 10px;
+}
+
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}

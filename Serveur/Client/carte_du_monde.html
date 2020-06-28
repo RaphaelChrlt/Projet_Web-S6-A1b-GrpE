@@ -15,10 +15,10 @@
     <figure id = "flag"></figure>
   </div>
 
+
   <h1 id = "grostitre">
     Capitales d'Amerique du Sud et d'Oceanie
   </h1>
-
 
 
   <div id = "colonne">
@@ -40,13 +40,52 @@
   <!-- Zone pour l'insertion de la carte OSM via Leaflet -->
   <div id="map" style="margin-bottom:1.33em"></div>  
   
+
+
+
+
+
+
   <div id="formulaire">
-  <h3 id="autre"><b>Calculer la distance entre 2 capitales</b></h3>
-  <label>Pays/Capital A:<input id="paysa" name="paysa"</label><br>
-  <label>Pays/Capital B:<input id="paysb" name="paysb"</label><br>
-  <button id="bouton">Calcul</button>
+  <h3 id="autre"><b>Calcul de distance entre capitales</b></h3>
+  <label>Pays/Capitale A:<input id="paysa" name="paysa"</label><br>
+  <label>Pays/Capitale B:<input id="paysb" name="paysb"</label><br>
+
+
+
+
+<div class="svg-wrapper">
+  <svg height="20" width="60" xmlns="http://www.w3.org/2000/svg">
+    <rect class="shape" height="20" width="60" />
+    <div id = "cadrebouton">
+    <button id="calcul">Calcul</button>
+    </div>
+  </svg>
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
   <p id="reponsecalcul"></p>
+
   </div>
+
+
+
+
+
+
+
 
 
  </body>
@@ -153,7 +192,7 @@ function OnMarkerClick (e) {
 }
 
 //formulaire pour le calcul de distance
-document.getElementById('bouton').addEventListener('click', envoiformulaire);
+document.getElementById('calcul').addEventListener('click', envoiformulaire);
 
 function envoiformulaire(e) {
    var xhr = new XMLHttpRequest();
