@@ -1,15 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jun 11 11:53:46 2020
-
-@author: letog
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Thu Jun 11 11:49:04 2020
 
-@author: letog
+@author: GroupeE
 """
 
 import http.server
@@ -43,7 +36,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
           self.send_json(c)
           break
     
-    #requête du formulaire de distance
+    #requete distance - requête du formulaire de distance
     elif self.path_info[0] == "distance":
         print(self.path_info[1],self.path_info[2])
         distance=self.calcul_distance(data_import,self.path_info[1],self.path_info[2])
@@ -68,7 +61,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
       self.send_static()
 
 
-  # méthode pour traiter les requêtes POST - non utilisée dans l'exemple
+  # méthode pour traiter les requêtes POST - non utilisée 
   def do_POST(self):
     self.init_params()
     send_error(405)

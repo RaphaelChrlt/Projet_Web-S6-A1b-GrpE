@@ -1,8 +1,4 @@
 
-#import sqlite3
-#
-#table=sqlite3.connect('pays.sqlite')
-
 def importation ():
     import sqlite3
     table=sqlite3.connect('pays.sqlite')
@@ -21,7 +17,7 @@ def importation ():
     c.execute(requete)
     r=c.fetchall()
     
-    identification=1
+    identification=1 #Chaque pays possède un id qui lui est propre
     for country in r:
         
         #Récupération des données dans chaque table
@@ -35,6 +31,7 @@ def importation ():
         datalist.append({'id':identification})
         identification+=1
         
+        #On remplit le dictionnaire du pays concerné
         for i in range(len(global_keys)):
             datalist[-1][global_keys[i]]=global_donnees[i]
         for i in range(len(demographie_keys)):
@@ -48,6 +45,7 @@ def importation ():
         
     return datalist
 
+#Fonctions permettant de lire les données d'un pays dans la table concernée
 def read_pays_demographie(conn,pays):
     c=conn.cursor()
     requete='SELECT * FROM demographie WHERE nom_commun=?'
