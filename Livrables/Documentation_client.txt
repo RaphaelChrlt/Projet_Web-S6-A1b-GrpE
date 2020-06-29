@@ -7,6 +7,8 @@ Pour lancer le serveur :
 3.	Cliquer sur carte_du_monde.html.
 4.	S’amuser d’explorer les pays dans Amérique du sud et Océanie !!
 
+Pour une expérience optimale, mettez votre navigateur au zoom 100%
+
 Actions disponibles sur le serveur :
 -	Calculer la distance entre les deux capitales
 -	Visiter la page wikipédia de la capitale, en cliquant sur « Page Wikipédia de la capitale »
