@@ -25,9 +25,6 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
   # sous-répertoire racine des documents statiques
   static_dir = '/client'
 
-  # version du serveur
-  server_version = 'TD3_mieux-insolites.py/0.1'
-
   # on surcharge la méthode qui traite les requêtes GET
   def do_GET(self):
     self.init_params()
@@ -45,11 +42,6 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         if c['id'] == int(self.path_info[1]):
           self.send_json(c)
           break
-
-    # requête générique
-    elif self.path_info[0] == "service":
-      self.send_html('<p>Path info : <code>{}</p><p>Chaîne de requête : <code>{}</code></p>' \
-          .format('/'.join(self.path_info),self.query_string));
     
     #requête du formulaire de distance
     elif self.path_info[0] == "distance":
@@ -79,14 +71,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
   # méthode pour traiter les requêtes POST - non utilisée dans l'exemple
   def do_POST(self):
     self.init_params()
-
-    # requête générique
-    if self.path_info[0] == "service":
-      self.send_html(('<p>Path info : <code>{}</code></p><p>Chaîne de requête : <code>{}</code></p>' \
-          + '<p>Corps :</p><pre>{}</pre>').format('/'.join(self.path_info),self.query_string,self.body));
-
-    else:
-      self.send_error(405)
+    send_error(405)
 
 
   # on envoie le document statique demandé
