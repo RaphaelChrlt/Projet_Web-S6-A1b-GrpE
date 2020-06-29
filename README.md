@@ -13,7 +13,7 @@ Dans le dossier Livrables\, vous trouverez le fichier Documentation_client.txt a
 Ces fichiers vous permettront de jouir des fantastiques actions possibles grâce au projet.
 
 Pour les examinateurs :
-Dans le dossier Livrables\, vous trouverez le fichier Documentation_technique.docx.
+Dans le dossier Livrables\, vous trouverez le fichier Documentation_technique.pdf .
 Vous pourrez alors comprendre comment la base de données à été créée ainsi que les différentes tables et attributs qu'elle contient.
 Aussi, vous trouverez une brève explication sur la fonction d'extraction des données entre la base de données en .sqlite vers le serveur .py .
 Enfin, vous trouverez des explications sur le fonctionnement du serveur.
