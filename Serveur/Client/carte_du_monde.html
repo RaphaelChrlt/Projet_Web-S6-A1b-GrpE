@@ -64,14 +64,6 @@
 
   </div>
 
-
-
-
-
-
-
-
-
  </body>
 
 
@@ -185,12 +177,12 @@ function envoiformulaire(e) {
    var psa = document.getElementById('paysa').value;
 	psb = document.getElementById('paysb').value;
 
-   // requÃªte au serveur
+   // requête au serveur
    xhr.open('GET','/distance/'+psa+'/'+psb,true);
  
    xhr.onload = function() {   // fonction callback
 
-    // affichage informations renoyÃ©es dans l'Ã©lÃ©ment #drop_zone
+    // affichage informations renoyées dans l'élément #drop_zone
     document.getElementById('reponsecalcul').innerHTML = this.responseText;
   };
   xhr.send();

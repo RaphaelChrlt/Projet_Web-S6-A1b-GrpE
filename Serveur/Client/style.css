@@ -1,4 +1,6 @@
-﻿body {
+﻿/* Corps principal */
+
+body {
   background-size: 100%;
   background-repeat: no-repeat;
   color: white;
@@ -8,6 +10,8 @@
   border: 1px solid transparent;
   box-sizing: border-box;
 }
+
+body > * {   padding-left: 10px; }
 
 /* polices de caractères  et image de fond*/
 /*http://www.fonts2u.com/caribbean-regular.font*/
@@ -38,15 +42,18 @@ h1#grostitre {
 }
 
 
-/* contenu de la page */
-body > * {   padding-left: 10px; }
+/*Mise en page de la map*/
+div#map {
+  z-index : 1;
+  box-shadow : 0 0 30px 5px lightseagreen;
+}
+
+#map { height: 500px; width: 1000px; }
 
 
 /* Mise en page de la description*/
 
-
-
-/* positionnement des champs */
+/* Position et paramètres généraux de la description*/
 div#colonne { 
   font-size: 110%;
   font-family: "Trebuchet MS", sans-serif;
@@ -60,8 +67,17 @@ div#colonne {
   top : -1.5em;
 }
 
+/*Style de règle horizontal*/
+hr#barre{
+  color: lightseagreen;
+}
 
+/*Style du lien wikipédia*/
+.link{ 
+  color : cyan; 
+}
 
+/* Mise en page du drapeau*/
 div#colonne2{
   float : right;
   margin-right : 0.5em;
@@ -70,18 +86,7 @@ div#colonne2{
 }
 
 
-div#map {
-  z-index : 1;
-  box-shadow : 0 0 30px 5px lightseagreen;
-}
-
-hr#barre{
-  color: lightseagreen;
-}
-
-.link{ 
-  color : cyan; 
-}
+/* Mise en page du formulaire de calcul de distance*/
 
 div#formulaire{
   z-index: 2;
@@ -99,7 +104,7 @@ div#formulaire{
   height: 172px;
 }
 
-
+/* Style des inputs Pays/Capitale */
 input{
   margin-left: 10px;
   margin-top : 3px;
@@ -108,28 +113,14 @@ input{
   color : white;
 }
 
-
-
-
-label { display: block; }
-label span { display: inline-block; width: 5em; height: 1.5em; }
-
-a.delete:hover {
-  color: red;
-}
-#map { height: 500px; width: 1000px; }
-
-
-
-
-
-
+/* Positionnement du bouton Calcul*/
 div#cadrebouton{
   position: relative;
   top : -33px;
   left: 0px;
 }
 
+/*Style du bouton calcul*/
 button#calcul{
   text-shadow : 1px 1px 1px black;
   margin-top: 10px;
@@ -138,13 +129,16 @@ button#calcul{
   border : none;
 }
 
+/* Positionnement du résultat du calcul*/
 p#reponsecalcul{
   position : relative;
   top : 15px;
   padding-bottom : 0px;
 }
 
+/* Paramètres de l'animation du bouton calcul*/
 
+/* Forme de la ligne animée */
 .shape {
   stroke-dasharray: 400 540;
   stroke-dashoffset: -140;
@@ -156,6 +150,7 @@ p#reponsecalcul{
   stroke-dasharray 0.5s;
 }
 
+/* Taille de l'animation */
 .svg-wrapper {
   width: 70px;
   height: 15px;
@@ -163,8 +158,19 @@ p#reponsecalcul{
   top: 10px;
 }
 
+/* Lors du survol*/
 .svg-wrapper:hover .shape {
   stroke-width: 2px;
   stroke-dashoffset: 0;
   stroke-dasharray: 760;
 }
+
+/*Divers*/
+
+label { display: block; }
+label span { display: inline-block; width: 5em; height: 1.5em; }
+
+a.delete:hover {
+  color: red;
+}
+
